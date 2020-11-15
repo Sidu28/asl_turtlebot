@@ -4,7 +4,7 @@ import rospy
 from nav_msgs.msg import OccupancyGrid, MapMetaData, Path
 from geometry_msgs.msg import Twist, Pose2D, PoseStamped
 from std_msgs.msg import String
-from asl_turtlebot.msg import DetectedObject
+from asl_turtlebot.msg import DetectedObject, DetectedObjectList
 import tf
 import numpy as np
 from numpy import linalg
@@ -122,6 +122,7 @@ class Navigator:
 
         # list of goals, in order
         self.goal_list = [] #implement as a list of three-element tuples, with the last tuple being all zeroes (original position)
+        self.vendor_dict = {}. #dictionary of vendor names to coordinates
 
         rospy.Subscriber('/map', OccupancyGrid, self.map_callback)
         rospy.Subscriber('/map_metadata', MapMetaData, self.map_md_callback)
@@ -133,8 +134,10 @@ class Navigator:
         # Cat detector
         rospy.Subscriber('/detector/beer', DetectedObject, self.cat_detected_callback) #detecting beer, not cat
         
-        # Subscribe to vendors
-        #rospy.Subscriber('/vendors', VendorList, self.vendor_callback)
+        
+        
+        #Subscribe to vendors
+        rospy.Subscriber('/vendors', DetectedObjectList, self.vendor_callback
 
         # Publisher for "meow" message
         self.messages = rospy.Publisher('/mensaje', String, queue_size=10)
@@ -412,9 +415,11 @@ class Navigator:
         if self.mode == Mode.TRACK or self.mode == Mode.PARK and dist > 0:
             self.init_cat()
 
-    # def vendor_callback(self, msg):
+    def vendor_callback(self, msg):
         # """ callback for the list of vendors we build """
-        # self.goal_list.append(msg)
+        name = msg.name
+                        
+        #(self.vendor_dict)[name] = **insert tuple**
     
     def at_goal(self):
         """
