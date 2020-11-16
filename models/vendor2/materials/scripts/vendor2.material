@@ -1,4 +1,4 @@
-material vendor2
+material giraffe
 {
   technique
   {
@@ -7,7 +7,7 @@ material vendor2
       texture_unit
       {
 	    
-        texture textures/vendor2.jpg
+        texture textures/giraffe.jpg
 	    
       }
     }
