@@ -6,9 +6,9 @@ material vendor1
     {
       texture_unit
       {
-	    rotate 90
-        texture textures/vendor1.jpg
-	    scale 1 1
+	    
+        texture textures/zebra.jpg
+	   
       }
     }
   }
