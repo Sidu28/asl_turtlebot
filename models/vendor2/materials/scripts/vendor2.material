@@ -7,7 +7,7 @@ material vendor2
       texture_unit
       {
 	    
-        texture vendor2.jpg
+        texture textures/vendor2.jpg
 	    
       }
     }
