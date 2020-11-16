@@ -1,1 +1,17 @@
+material vendor1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+	    rotate 90
+        texture vendor1.jpg
+	    scale 1 1
+      }
+    }
+  }
+}
+
 
