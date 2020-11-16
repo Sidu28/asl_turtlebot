@@ -1,1 +1,15 @@
-
+material vendor2
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+	    
+        texture vendor2.jpg
+	    
+      }
+    }
+  }
+}
