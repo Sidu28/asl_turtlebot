@@ -7,7 +7,7 @@ material vendor1
       texture_unit
       {
 	    rotate 90
-        texture vendor1.jpg
+        texture textures/vendor1.jpg
 	    scale 1 1
       }
     }
